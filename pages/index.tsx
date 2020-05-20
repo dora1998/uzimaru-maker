@@ -1,32 +1,36 @@
 import * as React from 'react';
 import Head from 'next/head';
-import { Text, Box, useTheme, Heading } from '@chakra-ui/core';
+import { Box, useTheme, Heading, Flex } from '@chakra-ui/core';
 import { AppTheme } from '../lib/theme';
+import { UzimaruEditBox } from '../components/UzimaruEditBox';
 
 export default function Home() {
   const theme = useTheme() as AppTheme;
 
   return (
-    <div className="container">
+    <Box className="container" color={theme.colors.white}>
       <Head>
-        <title>うじまるくんを作ろう！</title>
+        <title>うじまるくんをつくろう！</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main color={theme.colors.white}>
         <Box width="100%" maxWidth="768px" mx="auto">
           <Heading textAlign="center" my={8}>
-            うじまるくんを作ろう！
+            うじまるくんをつくろう！
           </Heading>
+
+          <Flex justify="center">
+            <UzimaruEditBox />
+          </Flex>
         </Box>
       </main>
 
       <style jsx global>{`
         html {
-          background-color: ${theme.colors.uzimaru.gray};
-          color: ${theme.colors.white};
+          background-color: ${theme.colors.uzimaru.grayBg};
         }
       `}</style>
-    </div>
+    </Box>
   );
 }

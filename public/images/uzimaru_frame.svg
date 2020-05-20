@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#199861;}
+</style>
+<path class="st1" d="M137.5,88.1c12-10.7,34.3-27.8,66.8-37.9c0,0,27.3-8.1,53.9-8.1c100,0,181.1,81.1,181.1,181.1
+	c0,49.3,0,141.4-1.9,181.1H288.3v65.3h-87v-26.9h60.2v-38.4h-3.2c-100,0-181.1-81.1-181.1-181.1c0-27.8,8.1-53.9,8.1-53.9
+	c2.6-8.4,7.1-20.7,14.8-34.4C111.6,114.3,125.4,99,137.5,88.1z M105.3,223.1c0,100,80,154.2,153,154.2h152.3V223.1
+	c0-100-83.8-151-152.3-151C158.2,72.1,105.3,149.5,105.3,223.1z"/>
+</svg>
