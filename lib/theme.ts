@@ -1,14 +1,17 @@
-import { theme } from '@chakra-ui/core';
+import { theme, DefaultTheme } from '@chakra-ui/core';
+
+export type AppTheme = DefaultTheme & {
+  colors: { uzimaru: { gray: string; green: string } };
+};
 
 // Let's say you want to add custom colors
 export const appTheme = {
   ...theme,
   colors: {
     ...theme.colors,
-    brand: {
-      900: '#1a365d',
-      800: '#153e75',
-      700: '#2a69ac',
+    uzimaru: {
+      gray: '#3C3C3C',
+      green: '#199861',
     },
   },
 };
