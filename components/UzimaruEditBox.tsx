@@ -1,13 +1,13 @@
 import React, { ComponentProps, useState, useCallback } from 'react';
 import { Stage, Layer, Rect, Image, Path } from 'react-konva';
 import { useTheme } from '@chakra-ui/core';
+import useImage from "use-image";
 import { AppTheme } from '../lib/theme';
-import { useImage } from '../lib/hooks/useImage';
 import { TransformablePath } from './TransformablePath';
 
 export const UzimaruEditBox: React.FC = () => {
   const theme = useTheme() as AppTheme;
-  const [frame, frameLoaded] = useImage('/images/uzimaru_frame.svg');
+  const [frame] = useImage('/images/uzimaru_frame.svg');
 
   const [selectPathIndex, setSelectPathIndex] = useState<number>(-1);
   const [paths, setPaths] = useState<ComponentProps<typeof Path>[]>([
@@ -50,7 +50,7 @@ export const UzimaruEditBox: React.FC = () => {
           shadowBlur={5}
         />
         <Image
-          image={frameLoaded && frame}
+          image={frame}
           x={0}
           y={0}
           width={512}

@@ -16,7 +16,8 @@
     "next": "9.4.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-konva": "^16.13.0-3"
+    "react-konva": "^16.13.0-3",
+    "use-image": "^1.0.5"
   },
   "devDependencies": {
     "@types/node": "^14.0.4",
