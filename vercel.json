@@ -1,0 +1,21 @@
+{
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@now/next"
+    },
+    {
+      "src": "functions/ogp.ts",
+      "use": "@now/node",
+      "config": {
+        "includeFiles": ["functions/fonts/*"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/functions/(.+)",
+      "dest": "/functions/$1.ts"
+    }
+  ]
+}

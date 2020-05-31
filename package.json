@@ -1,6 +1,6 @@
 {
   "name": "uzimaru-maker",
-  "version": "0.1.0",
+  "version": "dev",
   "private": true,
   "scripts": {
     "dev": "next dev",

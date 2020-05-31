@@ -1,12 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { createCanvas, registerFont } from 'canvas'
-import fontData from './font'
+import path from 'path'
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
-  const fs = require('fs')
-  const decode = new Buffer(fontData, 'base64')
-  fs.writeFileSync('/tmp/ogp_font.ttf', decode)
-  registerFont('/tmp/ogp_font.ttf', {
+  registerFont(path.join(__dirname, 'fonts', 'mplus-1c-medium.ttf'), {
     family: 'mplus',
   })
 
