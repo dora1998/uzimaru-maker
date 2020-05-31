@@ -16,7 +16,9 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async (
 
 type Props = ServerSideProps
 const Share: NextPage<Props> = ({ result }) => {
-  const ogpUrl = `${SITE_URL}/functions/ogp?result=${result}`
+  const ogpUrl = `${SITE_URL}/functions/ogp?result=${encodeURIComponent(
+    result as string
+  )}`
 
   const router = useRouter()
   useEffect(() => {
