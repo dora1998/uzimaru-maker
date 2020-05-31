@@ -80,7 +80,7 @@ const Home: NextPage = () => {
                   }}
                   text={`${scoreStr}点のうじまるくんを作ったよ！`}
                   url={shareUrl}
-                  hashtags="uzimaru生誕LT会"
+                  hashtags="uzimaru生誕LT会,uzimaru_maker"
                 >
                   結果をシェアする
                 </ShareButton>
