@@ -3,7 +3,7 @@ import { createCanvas, registerFont } from 'canvas'
 import path from 'path'
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
-  registerFont(path.join(__dirname, 'fonts', 'mplus-1c-medium.ttf'), {
+  registerFont(path.join('functions', 'fonts', 'mplus-1c-medium.ttf'), {
     family: 'mplus',
   })
 
