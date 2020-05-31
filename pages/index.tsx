@@ -9,7 +9,7 @@ import { UzimaruEditBox } from '../components/UzimaruEditBox'
 import { getScoreFromPaths, makeRandomPositionandScale } from '../lib/game'
 import { ShareButton } from '../components/ShareButton'
 
-export const Home: NextPage = () => {
+const Home: NextPage = () => {
   const theme = useTheme() as AppTheme
   const [score, setScore] = useState<number | null>(null)
   const [paths, setPaths] = useState<ComponentProps<typeof Path>[]>([
@@ -98,3 +98,5 @@ export const Home: NextPage = () => {
     </Box>
   )
 }
+
+export default Home
