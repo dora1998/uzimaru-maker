@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "now-build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build"
+    "now-build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && yarn run build"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
