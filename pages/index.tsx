@@ -1,4 +1,5 @@
-import React, { ComponentProps, useEffect, useState } from 'react'
+import React, { ComponentProps, useEffect, useMemo, useState } from 'react'
+import { NextPage } from 'next'
 import Head from 'next/head'
 import { Box, useTheme, Heading, Flex, Button, Text } from '@chakra-ui/core'
 import { Path } from 'react-konva'
@@ -8,7 +9,7 @@ import { UzimaruEditBox } from '../components/UzimaruEditBox'
 import { getScoreFromPaths, makeRandomPositionandScale } from '../lib/game'
 import { ShareButton } from '../components/ShareButton'
 
-export default function Home() {
+export const Home: NextPage = () => {
   const theme = useTheme() as AppTheme
   const [score, setScore] = useState<number | null>(null)
   const [paths, setPaths] = useState<ComponentProps<typeof Path>[]>([
@@ -33,6 +34,8 @@ export default function Home() {
   useEffect(() => {
     setPaths(paths.map((p) => ({ ...p, ...makeRandomPositionandScale() })))
   }, [])
+
+  const scoreStr = useMemo(() => Math.round(score * 10) / 10, [score])
 
   return (
     <Box className="container" color={theme.colors.white}>
@@ -65,7 +68,7 @@ export default function Home() {
                 <Text fontSize="xl">
                   このうじまるくんは、
                   <Text fontSize="4xl" as="span">
-                    {score}
+                    {scoreStr}
                   </Text>
                   点！
                 </Text>
@@ -75,7 +78,7 @@ export default function Home() {
                     variantColor: 'blue',
                     mt: 8,
                   }}
-                  text={`${score}点のうじまるくんを作ったよ！`}
+                  text={`${scoreStr}点のうじまるくんを作ったよ！`}
                   url={`https://uzimaru-maker.now.sh`}
                   hashtags="uzimaru生誕LT会"
                 >
