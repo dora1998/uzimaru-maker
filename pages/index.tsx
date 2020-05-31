@@ -2,9 +2,11 @@ import React, { ComponentProps, useEffect, useState } from 'react'
 import Head from 'next/head'
 import { Box, useTheme, Heading, Flex, Button, Text } from '@chakra-ui/core'
 import { Path } from 'react-konva'
+import { AiOutlineTwitter } from 'react-icons/ai'
 import { AppTheme } from '../lib/theme'
 import { UzimaruEditBox } from '../components/UzimaruEditBox'
 import { getScoreFromPaths, makeRandomPositionandScale } from '../lib/game'
+import { ShareButton } from '../components/ShareButton'
 
 export default function Home() {
   const theme = useTheme() as AppTheme
@@ -58,11 +60,29 @@ export default function Home() {
             できた！
           </Button>
           {score && (
-            <Flex align="center" justify="center">
-              このうじまるくんは、
-              <Text fontSize="4xl">{score}</Text>
-              点！
-            </Flex>
+            <>
+              <Flex align="center" justify="center" direction="column">
+                <Text fontSize="xl">
+                  このうじまるくんは、
+                  <Text fontSize="4xl" as="span">
+                    {score}
+                  </Text>
+                  点！
+                </Text>
+                <ShareButton
+                  buttonProps={{
+                    leftIcon: AiOutlineTwitter,
+                    variantColor: 'blue',
+                    mt: 8,
+                  }}
+                  text={`${score}点のうじまるくんを作ったよ！`}
+                  url={`https://uzimaru-maker.now.sh`}
+                  hashtags="uzimaru生誕LT会"
+                >
+                  結果をシェアする
+                </ShareButton>
+              </Flex>
+            </>
           )}
         </Box>
       </main>
