@@ -1,6 +1,6 @@
 import React, { ComponentProps, useEffect, useState } from 'react'
 import Head from 'next/head'
-import { Box, useTheme, Heading, Flex, Button } from '@chakra-ui/core'
+import { Box, useTheme, Heading, Flex, Button, Text } from '@chakra-ui/core'
 import { Path } from 'react-konva'
 import { AppTheme } from '../lib/theme'
 import { UzimaruEditBox } from '../components/UzimaruEditBox'
@@ -8,6 +8,7 @@ import { getScoreFromPaths, makeRandomPositionandScale } from '../lib/game'
 
 export default function Home() {
   const theme = useTheme() as AppTheme
+  const [score, setScore] = useState<number | null>(null)
   const [paths, setPaths] = useState<ComponentProps<typeof Path>[]>([
     {
       data:
@@ -52,10 +53,17 @@ export default function Home() {
             size="lg"
             width="100%"
             mt={4}
-            onClick={() => window.alert(getScoreFromPaths(paths))}
+            onClick={() => setScore(getScoreFromPaths(paths))}
           >
             できた！
           </Button>
+          {score && (
+            <Flex align="center" justify="center">
+              このうじまるくんは、
+              <Text fontSize="4xl">{score}</Text>
+              点！
+            </Flex>
+          )}
         </Box>
       </main>
 
