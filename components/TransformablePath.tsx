@@ -7,13 +7,13 @@ interface Props {
   pathProps: ComponentProps<typeof Path>
   isSelected: boolean
   onChange: (newPathProps: ComponentProps<typeof Path>) => void
-  onSelect: () => void
+  onSelect?: () => void
 }
 export const TransformablePath: React.FC<Props> = ({
   pathProps,
   isSelected,
   onChange,
-  onSelect,
+  onSelect = () => {},
 }) => {
   const pathRef = useRef<Konva.Path>()
   const trRef = useRef()
