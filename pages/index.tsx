@@ -1,6 +1,5 @@
 import React, { ComponentProps, useEffect, useMemo, useState } from 'react'
 import { NextPage } from 'next'
-import Head from 'next/head'
 import { Box, useTheme, Heading, Flex, Button, Text } from '@chakra-ui/core'
 import { Path } from 'react-konva'
 import { AiOutlineTwitter } from 'react-icons/ai'
@@ -39,11 +38,6 @@ const Home: NextPage = () => {
 
   return (
     <Box className="container" color={theme.colors.white}>
-      <Head>
-        <title>うじまるくんをつくろう！</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main color={theme.colors.white}>
         <Box width="100%" maxWidth="768px" mx="auto">
           <Heading textAlign="center" my={8}>
