@@ -1,11 +1,11 @@
-import * as React from 'react';
-import Head from 'next/head';
-import { Box, useTheme, Heading, Flex } from '@chakra-ui/core';
-import { AppTheme } from '../lib/theme';
-import { UzimaruEditBox } from '../components/UzimaruEditBox';
+import React from 'react'
+import Head from 'next/head'
+import { Box, useTheme, Heading, Flex, Button } from '@chakra-ui/core'
+import { AppTheme } from '../lib/theme'
+import { UzimaruEditBox } from '../components/UzimaruEditBox'
 
 export default function Home() {
-  const theme = useTheme() as AppTheme;
+  const theme = useTheme() as AppTheme
 
   return (
     <Box className="container" color={theme.colors.white}>
@@ -19,7 +19,6 @@ export default function Home() {
           <Heading textAlign="center" my={8}>
             うじまるくんをつくろう！
           </Heading>
-
           <Flex justify="center">
             <UzimaruEditBox />
           </Flex>
@@ -32,5 +31,5 @@ export default function Home() {
         }
       `}</style>
     </Box>
-  );
+  )
 }

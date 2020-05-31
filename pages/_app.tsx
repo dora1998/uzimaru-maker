@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { AppProps } from 'next/app';
-import { ThemeProvider, CSSReset } from '@chakra-ui/core';
-import { appTheme } from '../lib/theme';
+import * as React from 'react'
+import { AppProps } from 'next/app'
+import { ThemeProvider, CSSReset } from '@chakra-ui/core'
+import { appTheme } from '../lib/theme'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <CSSReset />
       <Component {...pageProps} />
     </ThemeProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

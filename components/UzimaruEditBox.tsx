@@ -1,15 +1,15 @@
-import React, { ComponentProps, useState, useCallback } from 'react';
-import { Stage, Layer, Rect, Image, Path } from 'react-konva';
-import { useTheme } from '@chakra-ui/core';
-import useImage from "use-image";
-import { AppTheme } from '../lib/theme';
-import { TransformablePath } from './TransformablePath';
+import React, { ComponentProps, useState, useCallback } from 'react'
+import { Stage, Layer, Rect, Image, Path } from 'react-konva'
+import { useTheme } from '@chakra-ui/core'
+import useImage from 'use-image'
+import { AppTheme } from '../lib/theme'
+import { TransformablePath } from './TransformablePath'
 
 export const UzimaruEditBox: React.FC = () => {
-  const theme = useTheme() as AppTheme;
-  const [frame] = useImage('/images/uzimaru_frame.svg');
+  const theme = useTheme() as AppTheme
+  const [frame] = useImage('/images/uzimaru_frame.svg')
 
-  const [selectPathIndex, setSelectPathIndex] = useState<number>(-1);
+  const [selectPathIndex, setSelectPathIndex] = useState<number>(-1)
   const [paths, setPaths] = useState<ComponentProps<typeof Path>[]>([
     {
       data:
@@ -28,15 +28,15 @@ export const UzimaruEditBox: React.FC = () => {
       fill: theme.colors.uzimaru.green,
       draggable: true,
     },
-  ]);
+  ])
   const updatePathProps = useCallback(
     (i: number, newPathProps: ComponentProps<typeof Path>) => {
-      const newPaths = [...paths];
-      newPaths[i] = newPathProps;
-      setPaths(newPaths);
+      const newPaths = [...paths]
+      newPaths[i] = newPathProps
+      setPaths(newPaths)
     },
     [paths, setPaths]
-  );
+  )
 
   return (
     <Stage width={544} height={544}>
@@ -69,5 +69,5 @@ export const UzimaruEditBox: React.FC = () => {
         ))}
       </Layer>
     </Stage>
-  );
-};
+  )
+}
