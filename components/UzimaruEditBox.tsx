@@ -49,7 +49,7 @@ export const UzimaruEditBox: React.FC<Props> = ({ paths, setPaths }) => {
             pathProps={p}
             isSelected={i === selectPathIndex}
             onChange={(newProps) => updatePathProps(i, newProps)}
-            onSelect={() => setSelectPathIndex(i)}
+            // onSelect={() => setSelectPathIndex(i)}
           />
         ))}
       </Layer>
