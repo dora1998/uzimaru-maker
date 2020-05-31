@@ -56,6 +56,7 @@ export const TransformablePath: React.FC<Props> = ({
       {isSelected && (
         <Transformer
           ref={trRef}
+          keepRatio={true}
           boundBoxFunc={(oldBox, newBox) => {
             // limit resize
             if (newBox.width < 5 || newBox.height < 5) {
