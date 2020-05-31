@@ -21,8 +21,9 @@ export const TransformablePath: React.FC<Props> = ({
   useEffect(() => {
     if (isSelected && trRef.current) {
       // we need to attach transformer manually
-      trRef.current.setNode(pathRef.current)
-      trRef.current.getLayer().batchDraw()
+      const refCurrent = trRef.current as any
+      refCurrent.setNode(pathRef.current)
+      refCurrent.getLayer().batchDraw()
     }
   }, [isSelected])
 
