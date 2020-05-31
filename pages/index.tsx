@@ -35,6 +35,12 @@ const Home: NextPage = () => {
   }, [])
 
   const scoreStr = useMemo(() => Math.round(score * 10) / 10, [score])
+  const shareUrl = useMemo(() => {
+    const resJson = paths.map((p) => ({ x: p.x, y: p.y }))
+    return `${process.env.SITE_URL}/share?result=${encodeURIComponent(
+      JSON.stringify(resJson)
+    )}`
+  }, [paths])
 
   return (
     <Box className="container" color={theme.colors.white}>
@@ -73,7 +79,7 @@ const Home: NextPage = () => {
                     mt: 8,
                   }}
                   text={`${scoreStr}点のうじまるくんを作ったよ！`}
-                  url={`https://uzimaru-maker.now.sh`}
+                  url={shareUrl}
                   hashtags="uzimaru生誕LT会"
                 >
                   結果をシェアする
