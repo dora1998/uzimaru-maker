@@ -23,6 +23,7 @@
   ],
   "include": [
     "next-env.d.ts",
+    "project-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
   ]
