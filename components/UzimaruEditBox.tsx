@@ -55,6 +55,7 @@ export const UzimaruEditBox: React.FC = () => {
           y={0}
           width={512}
           height={512}
+          onClick={() => setSelectPathIndex(-1)}
         />
 
         {paths.map((p, i) => (
