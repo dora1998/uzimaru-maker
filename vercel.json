@@ -8,7 +8,7 @@
       "src": "functions/ogp.ts",
       "use": "@now/node",
       "config": {
-        "includeFiles": ["functions/fonts/*"]
+        "includeFiles": ["fonts/*"]
       }
     }
   ],
