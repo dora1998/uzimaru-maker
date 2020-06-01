@@ -28,7 +28,7 @@ export default async (
   const result = JSON.parse(req.query.result)
   const pathData = partsPaths.map((p, i) => ({ ...p, ...result[i] }))
   const score = getScoreFromPaths(result)
-  const scoreStr = Math.floor(score)
+  const scoreStr = Math.round(score)
 
   registerFont(path.join('fonts', 'mplus-1c-medium.ttf'), {
     family: 'mplus',
