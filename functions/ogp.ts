@@ -28,7 +28,7 @@ export default async (
   const result = JSON.parse(req.query.result)
   const pathData = partsPaths.map((p, i) => ({ ...p, ...result[i] }))
   const score = getScoreFromPaths(result)
-  const scoreStr = Math.round(score)
+  const scoreForDisplay = Math.round(score)
 
   registerFont(path.join('fonts', 'mplus-1c-medium.ttf'), {
     family: 'mplus',
@@ -52,9 +52,9 @@ export default async (
 
   context.fillStyle = '#fff'
   context.font = '144px mplus'
-  context.fillText(`${scoreStr}`, 500, 300)
+  context.fillText(`${scoreForDisplay}`, 500, 300)
   context.font = '72px mplus'
-  context.fillText('点', 800 - (score < 100 ? 100 : 0), 290)
+  context.fillText('点', 800 - (scoreForDisplay < 100 ? 100 : 0), 290)
   context.font = '48px mplus'
   context.fillText('のうじまるくん', 500, 400)
 
