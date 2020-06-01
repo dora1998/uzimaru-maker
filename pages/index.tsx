@@ -51,7 +51,7 @@ const Home: NextPage = () => {
           >
             できた！
           </Button>
-          {score && (
+          {score !== null && (
             <>
               <Flex align="center" justify="center" direction="column">
                 <Text fontSize="xl">
