@@ -1,6 +1,14 @@
 import React, { ComponentProps, useEffect, useMemo, useState } from 'react'
 import { NextPage } from 'next'
-import { Box, useTheme, Heading, Flex, Button, Text } from '@chakra-ui/core'
+import {
+  Box,
+  useTheme,
+  Heading,
+  Flex,
+  Button,
+  Text,
+  PseudoBox,
+} from '@chakra-ui/core'
 import { Path } from 'react-konva'
 import { AiOutlineTwitter } from 'react-icons/ai'
 import { AppTheme } from '../lib/theme'
@@ -34,9 +42,11 @@ const Home: NextPage = () => {
   return (
     <Box className="container" color={theme.colors.white}>
       <main color={theme.colors.white}>
-        <Box width="100%" maxWidth="768px" mx="auto">
+        <Box width="100%" maxWidth="768px" mx="auto" px={{ base: 4, lg: 0 }}>
           <Heading textAlign="center" my={8}>
-            うじまるくんをつくろう！
+            うじまるくんを
+            <PseudoBox as="br" display={{ base: 'block', md: 'none' }} />
+            つくろう！
           </Heading>
           <Flex justify="center">
             <UzimaruEditBox paths={paths} setPaths={setPaths} />
