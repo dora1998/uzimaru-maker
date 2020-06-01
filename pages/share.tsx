@@ -22,7 +22,7 @@ const Share: NextPage<Props> = ({ result }) => {
 
   const router = useRouter()
   useEffect(() => {
-    router.push('/')
+    router.replace('/')
   }, [])
 
   return (
